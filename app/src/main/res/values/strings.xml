@@ -1,0 +1,20 @@
+<resources>
+
+    /** tab menu items **/
+    <string name="app_name">X-Fit</string>
+    <string name="workouts">Workouts</string>
+    <string name="yoga">Yoga</string>
+    <string name="meal">Meal</string>
+    <string name="help">Help</string>
+
+    /** Workout types **/
+    <string name="arms">Arms workout</string>
+    <string name="abs">Abs workout</string>
+    <string name="back">Back workout</string>
+    <string name="chest">Chest workout</string>
+    <string name="legs">Legs workout</string>
+    <string name="shoulder">Shoulder workout</string>
+
+
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purpleLight">#6200EE</color>
+    <color name="tabBackground">#677483</color>
+    <color name="tabSelected">#363c44</color>
+    <color name="tabNonSelected">#c7d5e7</color>
+    <color name="purpleDark">#3700B3</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="colorAccent">#03DAC5</color>
+</resources>
