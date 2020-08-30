@@ -28,9 +28,6 @@ ext {
     developerName = 'Kaushik Panchal'
     developerEmail = 'kaushik.rpk@gmail.com'
 
-    //Bintray Credentials
-    bintrayUsername = System.getenv("") // Your Bintray username
-    bintrayApiKey = System.getenv("bintrayApiKey") // API Key you copied in previous step
 }
 
 group = publishedGroupId
