@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.xfit.R
 import com.example.xfit.adapters.WorkoutTypeRecyclerView
 import com.example.xfit.network.NetworkState
+import com.example.xfit.utilities.AlertDialog
+import com.example.xfit.utilities.AppUtils
 import com.example.xfit.utilities.Injectors
 import com.example.xfit.viewmodel.WorkoutViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -38,17 +40,11 @@ class WorkoutsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        seUpRecyclerView()
+        observeDataAndFeedToViews()
+    }
 
-        rv_workout_type.layoutManager = LinearLayoutManager(activity)
-        rv_workout_type.addItemDecoration(
-            DividerItemDecoration(
-                activity,
-                DividerItemDecoration.VERTICAL
-            )
-        )
-        rv_workout_type.adapter = workoutAdapter
-        viewModel.getWorkoutType()
-
+    private fun observeDataAndFeedToViews() {
         viewModel.results.observe(viewLifecycleOwner) { state ->
             when (state) {
                 NetworkState.Loading -> activity?.progress?.visibility = View.VISIBLE
@@ -66,6 +62,24 @@ class WorkoutsFragment : Fragment() {
             }
         }
     }
+
+    private fun seUpRecyclerView() {
+        if (!AppUtils.isOnline(requireContext())) {
+            val alertDialog = AlertDialog()
+            alertDialog.networkAlertError(requireContext())
+        }
+
+        rv_workout_type.layoutManager = LinearLayoutManager(activity)
+        rv_workout_type.addItemDecoration(
+            DividerItemDecoration(
+                activity,
+                DividerItemDecoration.VERTICAL
+            )
+        )
+        rv_workout_type.adapter = workoutAdapter
+        viewModel.getWorkoutType()
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         (activity as AppCompatActivity?)?.supportActionBar?.title = "Workout"

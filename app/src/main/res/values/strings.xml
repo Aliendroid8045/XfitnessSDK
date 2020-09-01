@@ -14,7 +14,8 @@
     <string name="chest">Chest workout</string>
     <string name="legs">Legs workout</string>
     <string name="shoulder">Shoulder workout</string>
-
+    <string name="no_internet">No internet available</string>
+    <string name="no_internet_error">No internet available. Please connect to internet.</string>
 
 
 </resources>
