@@ -2,12 +2,12 @@ package com.example.xfit.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.xfit.data.repository.WorkOutRepository
+import com.example.xfit.data.repository.WorkoutRepository
 
-class WorkOutFactory(private val workOutRepository: WorkOutRepository) :
+class WorkoutFactory(private val workoutRepository: WorkoutRepository) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return WorkoutViewModel(workOutRepository) as T
+        return WorkoutViewModel(workoutRepository) as T
     }
 
 }

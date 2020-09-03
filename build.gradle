@@ -52,15 +52,13 @@ buildscript {
     }
 }
 
-plugins {
-    id "com.jfrog.bintray" version "1.7"
-}
-
-
 allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://maven.google.com'
+        }
     }
 }
 

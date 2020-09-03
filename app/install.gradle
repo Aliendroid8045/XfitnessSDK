@@ -1,0 +1,39 @@
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.example.xfit'
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                groupId 'com.example.xfit'
+                artifactId 'fitness'
+                name 'fitness'
+                description 'An android library.'
+                url 'https://github.com/Aliendroid8045/Xfitness'
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'Aliendroid'
+                        name 'Kaushik panchal'
+                        email 'kaushik.rpk@gmail.com'
+                    }
+                }
+
+                scm {
+                    connection 'https://github.com/Aliendroid8045/Xfitness.git'
+                    developerConnection 'https://github.com/Aliendroid8045/Xfitness.git'
+                    url 'https://github.com/Aliendroid8045/Xfitness'
+                }
+            }
+        }
+    }
+}

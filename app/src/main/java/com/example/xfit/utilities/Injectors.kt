@@ -1,13 +1,13 @@
 package com.example.xfit.utilities
 
-import com.example.xfit.data.repository.WorkOutRepository
-import com.example.xfit.network.WorkOutTypeNetworkService
-import com.example.xfit.viewmodel.WorkOutFactory
+import com.example.xfit.data.repository.WorkoutRepository
+import com.example.xfit.network.NetworkService
+import com.example.xfit.viewmodel.WorkoutFactory
 
 object Injectors {
 
-    fun provideWorkOutFactory(): WorkOutFactory {
-        val repository = WorkOutRepository(WorkOutTypeNetworkService.createWorkOutTypeService())
-        return WorkOutFactory(repository)
+    fun provideWorkOutFactory(): WorkoutFactory {
+        val repository = WorkoutRepository(NetworkService.createNetworkService())
+        return WorkoutFactory(repository)
     }
 }

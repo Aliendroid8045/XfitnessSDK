@@ -1,113 +1,32 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
-ext {
-    bintrayRepo = 'fitness' // Name of the Bintray repo you created
-    bintrayName = 'com.example.fitness' // Bintray package name
-    artifact = 'fitness'
-    // Artifact ID of the SDK which will be added in implementation line of gradle
 
-    publishedGroupId = 'com.example.fitness'
-// Group ID of the SDK which will be added in implementation line of gradle
-    libraryVersion = '1.0.0 -alpha1' // Version of the library you created in Bintray
-    libraryName = 'fitness' // It is generally the module name
-    libraryDescription = 'This package contain fitness app basic with MVVM, Room, androidX and with livedata library.'
-    // Small description of the library
 
-    siteUrl = 'https://github.com/Aliendroid8045/Xfitness'
-    gitUrl = 'https://github.com/Aliendroid8045/Xfitness.git'
+/*ext {
+    bintrayRepo = 'fitness' // Repo name in bintray dashboard
+    bintrayName = 'com.example.fitness' // package name of the bintray repo
 
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+    publishedGroupId = 'com.example.fitness'   // this is the ID we want to see in implementation line
+    libraryName = 'fitness'     // this is the module name of library
+    artifact = 'fitness'        // this is the artifact we want to see in implementation line
 
-    developerId = ""
-    developerName = 'Kaushik Panchal'
-    developerEmail = 'kaushik.rpk@gmail.com'
+    libraryDescription = '' // description of library
 
-}
+    siteUrl = 'https://github.com/Aliendroid8045/Xfitness'    // git repo url
+    gitUrl = 'https://github.com/Aliendroid8045/Xfitness.git' // git repo vcs url
 
-group = publishedGroupId
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
+    libraryVersion = '1.0.3'      // library version
 
-                groupId publishedGroupId
-                artifactId = artifact
-                name libraryName
-                version = libraryVersion
-                description = libraryDescription
-                url siteUrl
+    developerId = 'Aliendroid'                // This is your bintray username
+    developerName = 'Kaushik'              // Developer's name
+    developerEmail = 'kaushik.rpk@gmail.com'                // Developer's email
 
-                licenses {
-                    license {
-                        name licenseName
-                        url licenseUrl
-                    }
-                }
-                developers {
-                    developer {
-                        id developerId
-                        name developerName
-                        email developerEmail
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
-    }
-}
-
-// Avoid Kotlin docs error
-tasks.withType(Javadoc) {
-    enabled = false
-}
-
-// Remove javadoc related tasks
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-
-// https://github.com/bintray/gradle-bintray-plugin
-bintray {
-    user = System.getenv("bintrayUser")
-    key = System.getenv("bintrayApiKey")
-
-    configurations = ['archives']
-    pkg {
-        repo = bintrayRepo
-        name = bintrayName
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = allLicenses
-        publish = true
-    }
-}
+    licenseName = 'The Apache Software License, Version 2.0'  // for example, The Apache Software License, Version 2.0
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'   // for example, http://www.apache.org/licenses/LICENSE-2.0.txt
+    allLicenses = ["Apache-2.0"]    // array of licenses, for example, ["Apache-2.0"]
+}*/
 
 android {
     compileSdkVersion 30
@@ -176,4 +95,6 @@ dependencies {
     //photo loading lib for server images in background thread
     implementation 'com.github.bumptech.glide:glide:4.11.0'
 
+    apply from: 'install.gradle'
+    apply from: 'bintray.gradle'
 }

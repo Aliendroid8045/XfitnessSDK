@@ -15,8 +15,6 @@ class YogaFragment : Fragment() {
         fun newInstance() = YogaFragment()
     }
 
-    private lateinit var viewModel: YogaViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,7 +24,6 @@ class YogaFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(YogaViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

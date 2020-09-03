@@ -1,9 +1,9 @@
 package com.example.xfit.data.repository
 
 import com.example.xfit.data.WorkoutType
-import com.example.xfit.network.WorkOutTypeNetworkService
+import com.example.xfit.network.NetworkService
 
-class WorkOutRepository(private val workoutTypeNetworkService: WorkOutTypeNetworkService) {
+class WorkoutRepository(private val workoutTypeNetworkService: NetworkService) {
 
 
     suspend fun makeWorkoutTypeCall(): List<WorkoutType> {
