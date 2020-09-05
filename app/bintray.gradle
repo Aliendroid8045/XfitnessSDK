@@ -8,10 +8,12 @@ task sourcesJar(type: Jar) {
 }
 
 task javadoc(type: Javadoc) {
-    excludes = ['**/*.kt']
     source = project.android.sourceSets.main.java.srcDirs
     options.linkSource true
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+tasks.withType(Javadoc).all {
+    enabled = false
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
