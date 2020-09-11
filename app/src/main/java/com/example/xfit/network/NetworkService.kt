@@ -14,6 +14,9 @@ interface NetworkService {
     @GET("ed06f3e422b87ae8419ae7754203356b/raw/0f9a23693c47d9ef6242945fe4e0c277d98e80d9/workoutType")
     suspend fun getWorkout(): List<WorkoutType>
 
+    @GET("ed06f3e422b87ae8419ae7754203356b/raw/0f9a23693c47d9ef6242945fe4e0c277d98e80d9/workoutType")
+    suspend fun getArmWorkout(): List<WorkoutType>
+
     /** add interceptor to generate logs request and response information*/
     companion object {
         private const val BASE_URL = "https://gist.githubusercontent.com/Aliendroid8045/"

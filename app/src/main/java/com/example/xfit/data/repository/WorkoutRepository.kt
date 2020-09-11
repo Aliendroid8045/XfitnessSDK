@@ -7,7 +7,12 @@ class WorkoutRepository(private val workoutTypeNetworkService: NetworkService) {
 
 
     suspend fun makeWorkoutTypeCall(): List<WorkoutType> {
-       return workoutTypeNetworkService.getWorkout()
+        return workoutTypeNetworkService.getWorkout()
+    }
+
+    suspend fun makeArmsWorkoutCall(): List<WorkoutType> {
+        return workoutTypeNetworkService.getArmWorkout()
+
     }
 
 }
