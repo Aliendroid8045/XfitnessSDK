@@ -14,7 +14,7 @@ class AlertDialog {
         dialogBuilder.show().window?.setBackgroundDrawableResource(R.drawable.button_background)
     }
 
-    private val positiveButtonClick = { dialog: DialogInterface, which: Int ->
+    private val positiveButtonClick = { dialog: DialogInterface, _: Int ->
         dialog.dismiss()
     }
 

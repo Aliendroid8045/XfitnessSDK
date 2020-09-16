@@ -1,15 +1,14 @@
 package com.example.xfit.adapters
 
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.xfit.R
 import com.example.xfit.data.WorkoutType
+import com.example.xfit.utilities.inflate
 import kotlinx.android.synthetic.main.workout_type_card.view.*
 
 class WorkoutTypeRecyclerView : ListAdapter<WorkoutType, WorkoutTypeRecyclerView.WorkoutHolder>(
@@ -56,14 +55,4 @@ class WorkoutTypeRecyclerView : ListAdapter<WorkoutType, WorkoutTypeRecyclerView
         }
 
     }
-}
-//extension function to use in any fragment to return layout
-
-fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
-    return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
-    TODO(
-        "Please create a separate extension file when we" +
-                " have more method with extension function"
-    )
-
 }

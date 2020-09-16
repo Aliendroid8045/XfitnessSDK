@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
 
 interface NetworkService {
 
-    @GET("ed06f3e422b87ae8419ae7754203356b/raw/0f9a23693c47d9ef6242945fe4e0c277d98e80d9/workoutType")
+    @GET("ed06f3e422b87ae8419ae7754203356b/raw/672c66a452d9ab12f90e62f0ef3ebd5922aa1b00/workoutType")
     suspend fun getWorkout(): List<WorkoutType>
 
     @GET("ed06f3e422b87ae8419ae7754203356b/raw/0f9a23693c47d9ef6242945fe4e0c277d98e80d9/workoutType")
