@@ -4,25 +4,25 @@
     <item
         android:id="@+id/action_workouts"
         android:enabled="true"
-        android:icon="@drawable/ic_stars"
+        android:icon="@drawable/ic_house"
         android:title="@string/workouts"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_yoga"
         android:enabled="true"
-        android:icon="@drawable/ic_stars"
+        android:icon="@drawable/ic_yoga"
         android:title="@string/yoga"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_meal"
         android:enabled="true"
-        android:icon="@drawable/ic_stars"
+        android:icon="@drawable/ic_meal"
         android:title="@string/meal"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_help"
         android:enabled="true"
-        android:icon="@drawable/ic_stars"
+        android:icon="@drawable/ic_help"
         android:title="@string/help"
         app:showAsAction="ifRoom" />
 

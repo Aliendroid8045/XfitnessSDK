@@ -12,7 +12,6 @@ class HelpFragment : Fragment() {
         fun newInstance() = HelpFragment()
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

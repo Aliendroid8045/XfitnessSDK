@@ -1,23 +1,17 @@
 <resources>
 
-    /** tab menu items **/
     <string name="app_name">X-Fit</string>
+
+    /** tab menu items **/
     <string name="workouts">Workouts</string>
     <string name="yoga">Yoga</string>
     <string name="meal">Meal</string>
     <string name="help">Help</string>
 
-    /** Workout types **/
-    <string name="arms">Arms workout</string>
-    <string name="abs">Abs workout</string>
-    <string name="back">Back workout</string>
-    <string name="chest">Chest workout</string>
-    <string name="legs">Legs workout</string>
-    <string name="shoulder">Shoulder workout</string>
+
     <string name="no_internet">No internet available</string>
     <string name="no_internet_error">No internet available. Please connect to internet.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash_activity">SplashActivity</string>
 
 
 </resources>
