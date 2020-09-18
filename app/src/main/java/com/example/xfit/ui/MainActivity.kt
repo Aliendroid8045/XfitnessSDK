@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-
     private fun yoga(): Boolean {
         supportFragmentManager.beginTransaction()
             .replace(

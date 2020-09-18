@@ -21,6 +21,8 @@ import kotlinx.android.synthetic.main.workout_fragment.*
 
 class WorkoutsFragment : Fragment() {
 
+    private val workoutAdapter = WorkoutTypeRecyclerView()
+
     companion object {
         fun newInstance() = WorkoutsFragment()
     }
@@ -28,7 +30,6 @@ class WorkoutsFragment : Fragment() {
     private val viewModel: WorkoutViewModel by viewModels {
         Injectors.provideWorkOutFactory()
     }
-    private val workoutAdapter = WorkoutTypeRecyclerView()
 
 
     override fun onCreateView(

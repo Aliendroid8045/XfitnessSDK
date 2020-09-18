@@ -13,7 +13,6 @@ class WorkoutViewModel(private val workoutRepository: WorkoutRepository) : ViewM
     private val _results = MutableLiveData<NetworkState>()
     val results: LiveData<NetworkState> = _results
 
-
     fun getWorkoutType() {
         _results.value = NetworkState.Loading
         viewModelScope.launch() {

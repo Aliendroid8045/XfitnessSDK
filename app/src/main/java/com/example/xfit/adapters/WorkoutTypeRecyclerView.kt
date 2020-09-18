@@ -53,6 +53,5 @@ class WorkoutTypeRecyclerView : ListAdapter<WorkoutType, WorkoutTypeRecyclerView
                 return oldItem == newItem
             }
         }
-
     }
 }
