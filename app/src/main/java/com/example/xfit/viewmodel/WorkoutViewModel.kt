@@ -15,10 +15,12 @@ class WorkoutViewModel(private val workoutRepository: WorkoutRepository) : ViewM
 
     fun getWorkoutType() {
         _results.value = NetworkState.Loading
+
         viewModelScope.launch() {
             _results.value = try {
-                val workoutType = workoutRepository.makeWorkoutTypeCall()
+                val workoutType = workoutRepository.makeWorkoutTypeAPICall()
                 NetworkState.Content(workoutType)
+
             } catch (t: Throwable) {
                 NetworkState.Error(t)
             }
