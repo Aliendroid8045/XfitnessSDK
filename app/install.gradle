@@ -1,3 +1,4 @@
+/*
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.example.xfit'
@@ -36,4 +37,4 @@ install {
             }
         }
     }
-}
+}*/

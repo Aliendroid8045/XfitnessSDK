@@ -1,3 +1,4 @@
+/*
 apply plugin: 'com.jfrog.bintray'
 
 version = '1.0.1'
@@ -45,4 +46,4 @@ bintray {
         publish = true
         publicDownloadNumbers = true
     }
-}
+}*/

@@ -3,9 +3,11 @@ package com.example.xfit.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.xfit.R
+import com.example.xfit.ui.armsworkout.ArmsWorkoutFragment
+import com.example.xfit.utilities.ViewPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ViewPresenter{
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
@@ -70,5 +72,15 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.title = "Help"
 
         return true
+    }
+
+    override fun onClick() {
+        supportFragmentManager.beginTransaction()
+            .replace(
+                R.id.container,
+                ArmsWorkoutFragment.newInstance()
+            )
+            .commit()
+        supportActionBar?.title = "Arms workout"
     }
 }

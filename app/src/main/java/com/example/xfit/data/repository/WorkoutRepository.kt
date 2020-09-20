@@ -7,6 +7,7 @@ import kotlinx.coroutines.withContext
 
 class WorkoutRepository(private val workoutTypeNetworkService: NetworkService) {
 
+    //Make the network call on IO thread 
     suspend fun makeWorkoutTypeAPICall(): List<WorkoutType> = withContext(Dispatchers.IO) {
         workoutTypeNetworkService.getWorkout()
     }

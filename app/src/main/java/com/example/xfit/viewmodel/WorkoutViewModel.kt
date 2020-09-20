@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.xfit.data.repository.WorkoutRepository
 import com.example.xfit.network.NetworkState
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class WorkoutViewModel(private val workoutRepository: WorkoutRepository) : ViewModel() {
@@ -15,8 +16,7 @@ class WorkoutViewModel(private val workoutRepository: WorkoutRepository) : ViewM
 
     fun getWorkoutType() {
         _results.value = NetworkState.Loading
-
-        viewModelScope.launch() {
+        viewModelScope.launch(Dispatchers.Main) {
             _results.value = try {
                 val workoutType = workoutRepository.makeWorkoutTypeAPICall()
                 NetworkState.Content(workoutType)
